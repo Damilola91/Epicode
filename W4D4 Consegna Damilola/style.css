@@ -1,0 +1,21 @@
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#btn {
+    margin-top: 20px;
+}
+
+h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    text-align: center;
+    background-color: rgb(236, 241, 154);
+}
+
+.carattere{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
