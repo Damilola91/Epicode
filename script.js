@@ -1,101 +1,177 @@
-/*
-REGOLE
-- Tutte le risposte devono essere scritte in JavaScript
-- Se sei in difficoltà puoi chiedere aiuto a un Teaching Assistant
-- Puoi usare Google / StackOverflow ma solo quanto ritieni di aver bisogno di qualcosa che non è stato spiegato a lezione
-- Puoi testare il tuo codice in un file separato, o de-commentando un esercizio alla volta
-- Per farlo puoi utilizzare il terminale Bash, quello di VSCode o quello del tuo sistema operativo (se utilizzi macOS o Linux)
-*/
+const questions = [
+  {
+      category: "Science: Computers",
+      type: "multiple",
+      difficulty: "easy",
+      question: "What does CPU stand for?",
+      correct_answer: "Central Processing Unit",
+      incorrect_answers: [
+          "Central Process Unit",
+          "Computer Personal Unit",
+          "Central Processor Unit",
+      ],
+  },
+  {
+      category: "Science: Computers",
+      type: "multiple",
+      difficulty: "easy",
+      question:
+          "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      correct_answer: "Final",
+      incorrect_answers: ["Static", "Private", "Public"],
+  },
+  {
+      category: "Science: Computers",
+      type: "boolean",
+      difficulty: "easy",
+      question: "The logo for Snapchat is a Bell.",
+      correct_answer: "False",
+      incorrect_answers: ["True"],
+  },
+  {
+      category: "Science: Computers",
+      type: "boolean",
+      difficulty: "easy",
+      question:
+          "Pointers were not used in the original C programming language; they were added later on in C++.",
+      correct_answer: "False",
+      incorrect_answers: ["True"],
+  },
+  {
+      category: "Science: Computers",
+      type: "multiple",
+      difficulty: "easy",
+      question:
+          "What is the most preferred image format used for logos in the Wikimedia database?",
+      correct_answer: ".svg",
+      incorrect_answers: [".png", ".jpeg", ".gif"],
+  },
+  {
+      category: "Science: Computers",
+      type: "multiple",
+      difficulty: "easy",
+      question: "In web design, what does CSS stand for?",
+      correct_answer: "Cascading Style Sheet",
+      incorrect_answers: [
+          "Counter Strike: Source",
+          "Corrective Style Sheet",
+          "Computer Style Sheet",
+      ],
+  },
+  {
+      category: "Science: Computers",
+      type: "multiple",
+      difficulty: "easy",
+      question:
+          "What is the code name for the mobile operating system Android 7.0?",
+      correct_answer: "Nougat",
+      incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
+  },
+  {
+      category: "Science: Computers",
+      type: "multiple",
+      difficulty: "easy",
+      question: "On Twitter, what is the character limit for a Tweet?",
+      correct_answer: "140",
+      incorrect_answers: ["120", "160", "100"],
+  },
+  {
+      category: "Science: Computers",
+      type: "boolean",
+      difficulty: "easy",
+      question: "Linux was first created as an alternative to Windows XP.",
+      correct_answer: "False",
+      incorrect_answers: ["True"],
+  },
+  {
+      category: "Science: Computers",
+      type: "multiple",
+      difficulty: "easy",
+      question:
+          "Which programming language shares its name with an island in Indonesia?",
+      correct_answer: "Java",
+      incorrect_answers: ["Python", "C", "Jakarta"],
+  },
+];
+let currentQuestionIndex = 0;
+let finalResult = 0;
+let timer;
+let timeLeft = 60;
+let maxCount = 10;
 
-/* ESERCIZIO 1
- Elenca e descrivi i principali datatype in JavaScript. Prova a spiegarli come se volessi farli comprendere a un bambino.
-*/
+//ho fatto questa funzione per avviare il quiz con la prima domanda e che inizia il timer
+function startQuiz() {
+    const footer = document.getElementById('footer');
+    footer.innerText=`Question 1/10`
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+  showQuestion(currentQuestionIndex);
+  startTimer();
+}
+//questa function mostra la domanda attuale e genera i button risposte
+function showQuestion(index) {
+  const questionContainer = document.getElementById("question-container");
+  const questionElement = document.getElementById("question");
+  const answersElement = document.getElementById("answers");
 
-//I datatype in JavaScript sono dei dati che vengono assegnati nel linguaggio JavaScript.
-//I principali tipi di datatype che vedremo sono:
-//STRING: è una sequenza di caratteri che contengno generalmente testo. E' delimitata da "", '' o da backticks (queste offrono l'opportunità di inserire un altro "contenuto" all'interno della stringa tramite ${...});
-//Es. 
-const name = "Damilola";
-//NUMBERS: sono semplicemente numeri, a cui possiamo applicare gli operatori JavaScript;
-//Es. 
-const age = 32;
-//BOOLEAN: è un dato che darà sempre una risposta di tipo vero (true) o falso (false);
-//Es. 
-const isTrue = true;
-//ARRAY: è un dato di tipo lista e può contenere stringhe, numeri, booleani. Esse vengono delimitate con le parentesi quadre;
-//Es. 
-const list = ["Damilola", 32, true];
-//OBJECT: è un dato che rappresenta l'oggetto in cui all'interno delle parentesi graffe troviamo le sue proprietà;
-//Es. 
-const person = {
-      name: "Damilola",
-      age: 32,
-      height: 184,
-};
-//UNDEFINED: è utilizzata per mostrare che un variabile non sia stata ancora definita;
-//Es. 
-const test = undefined;
-//NULL: è utilizzato per dare un valore nullo ad una variabile;
-//Es. 
-const secondTest = null;
+  let totalAnswers = [];
 
-/* ESERCIZIO 2
- Descrivi cos'è un oggetto in JavaScript, con parole tue.
-*/
+  // Crea la domanda
+  questionElement.innerHTML = questions[index].question;
+  answersElement.innerHTML = "";
+  // creato array di stringhe con tutte le risposte
+  let incorrectAnswers = questions[index].incorrect_answers;
+  let correctAnswer = questions[index].correct_answer;
+  console.log (incorrectAnswers)
+  console.log (correctAnswer)
+  //qui ho creato un array con tutte le risposte 
+  totalAnswers = incorrectAnswers.concat(correctAnswer);
+  //rende le risposte in ordine random 
+  totalAnswers = totalAnswers.sort(() => Math.random() - 0.5);
+  // Creo i bottoni 
+  totalAnswers.forEach((answer) => {
+      const button = document.createElement('button');
+      button.innerText = answer;
+      answersElement.appendChild(button);
+      // Aggiunto evento click ai bottoni
+      button.addEventListener('click', () => {
+          if (button.innerText === correctAnswer) {
+              finalResult++;
+             
+          } else {
+          }
+          console.log(finalResult);
+          nextQuestion();
+      });
+  });
+}
 
-/* SCRIVI QUI LA TUA RISPOSTA */
-
-//L'oggetto è un box dove possiamo trovari vari elementi che vanno a costituire una struttura unica. Esso è composto da una coppia si chiave-valore;
-/*
-ESERCIZIO 3
- Scriti il codice necessario ad effettuare un addizione (una somma) dei numeri 12 e 20.
-*/
-
-/* SCRIVI QUI LA TUA RISPOSTA */
-
-const sum = 12+20
-console.log(sum)
-
-/* ESERCIZIO 4
- Crea una variable di nome "x" e assegna ad essa il numero 12.
-*/
-
-/* SCRIVI QUI LA TUA RISPOSTA */
-
-let x = 12 //usiamo let se vogliamo dare un valore alla variabile riassegnabile;
-const y = 12 //usiamo const se vogliamo dare un valore non riassegnabile alla variabile;
-
-/* ESERCIZIO 5
- Crea una variable chiamata "name" e assegna ad essa il tuo nome, sotto forma di stringa.
-*/
-
-/* SCRIVI QUI LA TUA RISPOSTA */
-
-// Vedi riga 20
-console.log(name);
-
-/* ESERCIZIO 6
- Esegui una sottrazione tra i numeri 4 e la variable "x" appena dichiarata (che contiene il numero 12).
-*/
-
-/* SCRIVI QUI LA TUA RISPOSTA */
-
-let subtract = 4-x;
-console.log(subtract);
-
-/* ESERCIZIO 7
- Crea due variabili: "name1" e "name2". Assegna a name1 la stringa "john", e assegna a name2 la stringa "John" (con la J maiuscola!).
- Verifica che name1 sia diversa da name2 (suggerimento: è la stessa cosa di verificare che la loro uguaglianza sia falsa).
- Infine, verifica che la loro uguaglianza diventi true se entrambe vengono trasformate in lowercase (senza cambiare il valore di name2!).
- NON HAI BISOGNO DI UN BLOCCO IF/ELSE. E' sufficiente utilizzare console.log().
-*/
-
-/* SCRIVI QUI LA TUA RISPOSTA */
-
-const name1 = "john"
-const name2 = "John"
-const isEqual = name1 !== name2
-console.log(isEqual)
-
+function nextQuestion() {
+    const footer = document.getElementById('footer');
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion(currentQuestionIndex);
+    timeLeft = 60;
+    clearInterval(timer);
+    startTimer();
+    footer.innerText=`Question ${currentQuestionIndex+1}/10`
+  } else {
+      clearInterval(timer);
+      alert(`Hai completato il quiz! il tuo punteggio è: ${finalResult}`);
+  }
+}
+//aggiorno il timer ogni secondo e passo alla domanda dopo quando scade
+function startTimer() {
+  const timerElement = document.getElementById("timer");
+  timerElement.innerText = timeLeft;
+  timer = setInterval(() => {
+    timeLeft--;
+    timerElement.innerText = timeLeft;
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      nextQuestion();
+    }
+  }, 1000);
+}
+console.log(finalResult);
+document.addEventListener("DOMContentLoaded", startQuiz);
+//per gestire il codice ho messo le variabili currentQuestionIndex, timer, timerLeft e wrongAnswerCount

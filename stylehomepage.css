@@ -1,0 +1,71 @@
+body{
+    background-image: url('./assets/bg.jpg');
+    background-size: cover;
+    color: white;
+    font-family: inter;
+    margin-left: 10%;
+    font-size: 16px;
+}
+
+img{
+    width: 150px;
+    height: 80px;
+    margin-left: 20px;
+    margin-top: 10px;
+    object-fit: contain;
+}
+
+
+h1{
+    width: 350px;
+    font-size: 60px;
+    font-family: outfit;
+    font-weight: normal;
+    line-height: 50px;
+}
+span{
+    font-weight: bold;
+    
+}
+
+.instructions{
+  color: #d20094;
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+.base p{
+    margin-top: 0px;
+}
+
+.base,
+.lista {
+    width:500px;
+    margin-top: 15px;
+}
+
+.fine{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    max-width: 800px;
+    margin-top: 45px;
+    
+}
+li{
+    margin-top: 5px;
+}
+
+
+#proceed {
+    background-color: #00ffff;
+    border: none ;
+    width: 150px;
+    height: 50px;
+    box-shadow: 0px 0px 14px 4px #00ffff;
+    font-weight: bolder;
+    font-size: medium;
+}
+
+input {
+    background: none;
+}
