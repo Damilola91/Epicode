@@ -1,0 +1,148 @@
+:root {
+    
+    --color-giallo: #FFDF7E;
+    --color-giallo-chiaro: #FEF7E2;
+    --color-nero: #222222;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+    width: 1240px;
+    padding: 100px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+nav {
+    background: var(--color-giallo-chiaro);
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    gap: 20px;
+    align-items: center;
+    border-radius: 100px;
+}
+
+nav a {
+    padding: 15px 30px;
+    background: var(--color-giallo);
+    flex-grow: 1;
+    text-align: center;
+    border-radius: 40px;
+    text-decoration: none;
+    color: var(--color-nero);
+    font-size: 1.2rem;
+}
+
+#logo {
+    flex-grow: 3;
+    display: flex;
+    font-size: 2rem;
+    font-weight: 700;
+    align-items: center;
+
+}
+
+#logo span {
+    flex-basis: 200px;
+}
+
+#logo img {
+    height: 60px;
+    
+}
+
+main {
+    display: flex;
+    gap: 20px;
+}
+
+main .left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+aside {
+   
+    padding: 10px;
+    height: 100%;
+    background: var(--color-giallo-chiaro);
+    gap: 10px;
+    display: flex;
+    flex-direction:column;
+    border-radius: 10px;
+    
+}
+
+aside a {
+ padding: 5px;
+ display: flex;
+ width: 300px;
+ background: var(--color-giallo);
+ height: 60px;
+ border-radius: 40px;
+ align-items: center;
+ gap: 5px;
+ color: var(--color-nero);
+ text-decoration: none;
+
+
+}
+
+aside a img {
+    height: 50px;
+    border-radius: 100px;
+}
+
+#article {
+    display: flex;
+    gap: 20px;
+    background: var(--color-giallo-chiaro);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#article img {
+    height: 250px;
+}
+
+.cardbox{
+    width: 300px;
+    
+    background: var(--color-giallo-chiaro) ;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.cardbox img {
+    object-fit: cover;
+    width: 100%;
+    
+    
+}
+
+.cardbox .description {
+    padding: 20px;
+    text-justify: left;
+    
+}
+
+.cardbox .description button {
+    border-radius: 10px;
+    background-color: var(--color-giallo);
+    padding: 5px 10px;
+    border: none;
+    color: black;
+    margin-top: 10px;
+        
+}
