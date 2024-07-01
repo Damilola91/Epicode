@@ -1,0 +1,31 @@
+.sales-day-img {
+    height: 680px;
+}
+
+.sales-day-img img {
+    width: 680px;
+
+}
+
+#card {
+    height: 600px;
+    width: 1000px;
+}
+
+main{
+    height: 680px;
+}
+
+#scale-img {
+    object-fit: cover;
+    height: 100%;
+    transform: scale(1.65);
+}
+
+.welcomeSummer img {
+    height: 100px;
+}
+
+.holiday-card img {
+    height: 233px;
+}
