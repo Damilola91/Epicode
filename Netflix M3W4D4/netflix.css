@@ -1,0 +1,74 @@
+body {
+    background-color: rgb(20, 20, 20);
+}
+
+.logo{
+    height: 40px;
+}
+
+.custom-list-nav{
+    list-style: none;
+}
+
+.custom-list-nav a{
+    color: white;
+    text-decoration: none;
+}
+
+.custom-size-icon-header{
+    height: 23px;
+    width: 25px;
+}
+
+.film-card{
+    width: 250px;
+    height: 205px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 0;
+    opacity: 1;
+}
+
+.film-card:hover{
+   transform: scale(1.1);
+   z-index: 1;
+
+}
+
+.film-card img:hover {
+    opacity: 0.2;
+}
+
+.swiper-slide{
+    width: 250px !important;
+}
+
+.swiper-button-next, 
+.swiper-button-prev{
+    top: 44%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.hide-section{
+    visibility: hidden;
+}
+
+.logo-social {
+    color: lightgray;
+    font-size: 32px;
+}
+
+.dropdown-custom li a:hover{
+    font-weight: bold;
+    background-color: rgb(20, 20, 20) !important;
+    color: white !important;
+}
+
+.dropdown-custom li a img {
+    width: 32px;
+    height: 32px;
+}
+
+.color-netflix {
+    background-color: rgb(178, 7, 16);
+}

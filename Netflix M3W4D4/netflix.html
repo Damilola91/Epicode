@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Netflix</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./netflix.css" />
+  </head>
+
+  <body class="container-fluid">
+
+    <nav>
+      <div
+        class="container-fluid  d-flex align-items-center justify-content-between navbar-expand-lg"
+      >
+        <!-- navbar left -->
+        <div class="d-flex align-items-center">
+          <div class="text-white d-block d-md-none">
+            <button
+              class="color-netflix"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#burgermenu"
+              aria-controls="offcanvasWithBothOptions"
+            >
+              <ion-icon name="menu-outline"></ion-icon>
+            </button>
+          </div>
+          <div class="logo">
+            <img
+              src="./movies/Netflix_Logo_RGB.png"
+              alt="logo netflix"
+              class="h-100"
+            />
+          </div>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex align-items-center">
+              <ul class="d-flex gap-3 custom-list-nav mt-3">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tv Show</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Recently Added</a></li>
+                <li><a href="#">My List</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- navbar right -->
+        <div class="text-white d-flex align-items-center gap-3">
+          <div class="d-flex align-items-center gap-3" id="searchContainer">
+            <a href="#" id="search-icon">
+              <ion-icon class="text-white" name="search-outline"></ion-icon>
+            </a>
+          </div>
+         
+          <span>Kids</span>
+          <ion-icon name="notifications-outline"></ion-icon>
+          <a
+            class="dropdown-toggle text-white"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            ><img src="./movies/avatar.png" alt=""
+          /></a>
+          <ul class="dropdown-menu bg-black dropdown-custom">
+            <li>
+              <a class="dropdown-item text-white" href="#"
+                ><img src="./movies/images.jpg" alt="" />Damilola</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item text-white" href="#"
+                ><img src="./movies/images (1).jpg" alt="" />Utente 1</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item text-white" href="#"
+                ><img src="./movies/images (2).jpg" alt="" />Utente 2</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav> 
+
+    <header class="mt-3">
+      <div
+        class="container-fluid text-white d-flex align-items-center justify-content-center justify-content-md-between gap-4"
+      >
+        <!-- header left -->
+        <div class="text-white d-flex align-items-center gap-4">
+          <h1>TV Shows</h1>
+          <div>
+            <a
+              class="nav-link dropdown-toggle bg-black border"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Generes
+            </a>
+            <ul class="dropdown-menu dropdown-custom bg-black">
+              <li><a class="dropdown-item text-white" href="#action2">Action</a></li>
+              <li><a class="dropdown-item text-white" href="#thriller2">Thriller</a></li>
+              <li><a class="dropdown-item text-white" href="#reality2">Reality</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- header right -->
+        <div class="d-flex align-items-center ">
+          <div
+            class="border custom-size-icon-header d-flex justify-content-center d-none d-md-block"
+          >
+            <a href="#">
+              <ion-icon class="text-white p-1" name="menu-outline"></ion-icon>
+            </a>
+          </div>
+          <div
+            class="border custom-size-icon-header d-flex justify-content-center d-none d-md-block"
+          >
+            <a href="#">
+              <ion-icon class="text-white p-1" name="grid-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- trending section -->
+    <section class="container-fluid mt-4 text-white">
+      <div class="row">
+        <div class="col">
+          <h2>Trending Now</h2>
+        </div>
+      </div>
+
+      <!-- Carousel -->
+      <div class="row">
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper" id="trending">
+            <!-- Slides -->
+          </div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- Watch it again -->
+    <section class="container-fluid mt-2 text-white">
+      <div class="row">
+        <div class="col">
+          <h2>Watch it again</h2>
+        </div>
+      </div>
+
+      <!-- Carousel -->
+      <div class="row">
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper" id="watch">
+            <!-- Slides -->
+          </div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Releases -->
+    <section class="container-fluid mt-2 text-white hide-section ">
+      <div class="row">
+        <div class="col">
+          <h2>New Releases</h2>
+        </div>
+      </div>
+
+      <!-- Carousel -->
+      <div class="row">
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper" id="new-releases">
+            <!-- Slides -->
+          </div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Action section -->
+    <section class="container-fluid mt-2 text-white" id="action2">
+      <div class="row">
+        <div class="col">
+          <h2>Action</h2>
+        </div>
+      </div>
+
+      <!-- Carousel -->
+      <div class="row">
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper" id="action">
+            <!-- Slides -->
+          </div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+      
+    </section>   
+
+   <!-- Thriller section -->
+    <section class="container-fluid mt-2 text-white " id="thriller2">
+      <div class="row">
+        <div class="col">
+          <h2>Thriller</h2>
+        </div>
+      </div>
+
+      <!-- Carousel -->
+      <div class="row">
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper" id="thriller">
+            <!-- Slides -->
+          </div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+      
+    </section> 
+
+     <!-- Reality section -->
+    <section class="container-fluid mt-2 text-white " id="reality2">
+      <div class="row">
+        <div class="col">
+          <h2>Reality</h2>
+        </div>
+      </div>
+
+      <!-- Carousel -->
+      <div class="row">
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper" id="reality">
+            <!-- Slides -->
+          </div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+      
+    </section> 
+    
+    <!--Footer-->
+
+    <footer class=" mt-5">
+      <div class="container text-left">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8">
+            <div class="row mb-3">
+              <div class="col-12">
+                <a
+                  href="https://www.facebook.com"
+                  class="me-4 text-decoration-none"
+                >
+                  <ion-icon class="logo-social" name="logo-facebook"></ion-icon>
+                </a>
+                <a
+                  href="https://www.twitter.com"
+                  class="me-4 text-decoration-none"
+                >
+                  <ion-icon class="logo-social" name="logo-twitter"></ion-icon>
+                </a>
+                <a
+                  href="https://www.instagram.com"
+                  class="me-4 text-decoration-none"
+                >
+                  <ion-icon
+                    class="logo-social"
+                    name="logo-instagram"
+                  ></ion-icon>
+                </a>
+                <a
+                  href="https://www.youtube.com"
+                  class="me-4 text-decoration-none"
+                >
+                  <ion-icon class="logo-social" name="logo-youtube"></ion-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-8">
+            <div class="row">
+              <div class="col col-md-3">
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <a href="#" class="text-decoration-none text-secondary"
+                      >Audio and Subtitles</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-decoration-none text-secondary"
+                      >Media Center</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-decoration-none text-secondary"
+                      >Privacy</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-decoration-none text-secondary"
+                      >Contact Us</a
+                    >
+                  </li>
+                </ul>
+                <button
+                  class="text-secondary btn border p-2 border_service mt-2"
+                >
+                  Service Code
+                </button>
+              </div>
+
+              <div class="col col-md-3">
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <a href="#" class="text-decoration-none text-secondary"
+                      >Audio Description</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-decoration-none text-secondary"
+                      >Investor Relations</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-decoration-none text-secondary"
+                      >Legal Notices</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col col-md-3">
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <a href="#" class="text-decoration-none text-secondary"
+                      >Help Center</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-decoration-none text-secondary"
+                      >Jobs</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-decoration-none text-secondary"
+                      >Cookie Preferences</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col col-md-3">
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <a href="#" class="text-decoration-none text-secondary"
+                      >Gift Cards</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="text-decoration-none text-secondary"
+                      >Terms of Use</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none text-secondary"
+                      >Corporate Information</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-8">
+            <div class="text-left">
+              <p class="text-secondary mt-4">
+                Â© 1997-2019 Netflix, Inc. { i-OdOOfcda2fdf9cOde}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Menù canvas sidebar-->
+    <div
+      class="offcanvas offcanvas-start"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="burgermenu"
+      aria-labelledby="offcanvasWithBothOptionsLabel"
+    >
+      <div class="offcanvas-header bg-black">
+       
+          <img class="offcanvas-title logo" id="offcanvasWithBothOptionsLabel" src="./movies/Netflix_Logo_RGB.png" alt="">
+        
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body bg-dark">
+        <section class="container p-3">
+          <div class="row" id="carte-nascoste">
+
+          </div>
+        </section>
+
+        <section class="container p-3">
+          <div class="row" id="carte-nascoste2">
+
+          </div>
+        </section>
+
+        <section class="container p-3">
+          <div class="row" id="carte-nascoste3">
+
+          </div>
+        </section>
+
+
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./netflix.js"></script>
+  </body>
+</html>
