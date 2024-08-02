@@ -1,0 +1,52 @@
+body {
+    background-color: #F9E9D7
+}
+
+nav {
+    background-color: rgb(34, 131, 134);
+}
+
+
+.custom-list-nav{
+    list-style: none;
+}
+
+.custom-list-nav a{
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+    color: rgb(34, 131, 134);
+}
+
+.dropdown-custom {
+    background-color: rgb(34, 131, 134);
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.nav-link {
+    background-color: rgb(34, 131, 134);
+    
+}
+
+.logo {
+    height: 40px;
+}
+
+.card {
+    height: 200px;
+    width: 250px;
+}
+
+.swiper-slide {
+    width: 250px !important;  
+}
+.card {
+    height: 200px;
+    width: 250px;
+}    
+
