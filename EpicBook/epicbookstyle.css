@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: "Inknut Antiqua", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+.cart {
+    height: 30px;
+    width: 30px;
+    color: white;
+    margin-top: 4px;
+}
+
+nav {
+    background-color: rgb(85, 60, 78);
+    
+}
+
+.nav-link {
+    color: white;
+}
+
+
+.opacity {
+    opacity: 0.5;
+} 
+
+.modifyImg {
+    height: 100px;
+    width: 200px;
+}
+
+
+
+footer h6 {
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.card {
+    
+    min-width: 250px;
+}
+
+#cards-books .col {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; 
+    padding-top: 70px;
+    background-color: white ;
+    
+}
+
+footer {
+    background-color: rgb(229, 164, 48);
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+}
+
+
+
+.modifyTitle {
+    font-family: "Courier Prime", monospace;
+    color: rgb(85, 60, 78);
+}
+
+.offcanvas {
+    background: rgb(214, 209, 209);
+}
+
+.btn-secondary {
+    background: rgb(169, 168, 168);
+    text-decoration: none;
+}
+
+ion-icon {
+    color :white;
+    height: 40px;
+    width: 40px;
+}
+
+.custom {
+    height: 38px;
+    width: 150px;
+}

@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: "Inknut Antiqua", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+
+footer {
+    background-color: rgb(229, 164, 48);
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+}
+
+footer h6 {
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    flex: 1; 
+    padding-top: 70px;
+    background-color: white ;
+    
+}
