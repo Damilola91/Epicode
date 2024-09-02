@@ -35,6 +35,9 @@ const detailsCard = (cardData, toAppend) => {
     const card = document.createElement("div");
     card.setAttribute("class", "card");
 
+    const cardBody = document.createElement("div")
+    cardBody.setAttribute("class", "card-body")
+
     const img = document.createElement("img");
     img.setAttribute("src", cardData.imageUrl);
     img.setAttribute("alt", cardData.name);
@@ -51,11 +54,8 @@ const detailsCard = (cardData, toAppend) => {
     const price = document.createElement("p");
     price.innerHTML = `<strong>Price:</strong> ${cardData.price}`;
    
-    card.appendChild(img);
-    card.appendChild(name);
-    card.appendChild(description);
-    card.appendChild(brand);
-    card.appendChild(price);
+    cardBody.append(brand, description, price)
+    card.append(name, img, cardBody)
 
 
     toAppend.appendChild(card);

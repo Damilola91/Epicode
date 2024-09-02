@@ -160,7 +160,7 @@ const cardProduct = (cardData, divToAppend) => {
     divToAppend.appendChild(card);
 
     cardDetails.addEventListener("click", () => {
-        window.location.href = `detailsClient.html?id=${cardData._id}`;
+        window.location.href = `detailsproduct.html?id=${cardData._id}`;
     });
 
     const updateButtonText = () => {
