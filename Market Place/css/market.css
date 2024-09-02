@@ -1,0 +1,45 @@
+body{
+    background-color: #dda15e;
+}
+
+.navbar {
+    
+    color: #ffd166;  
+    background-color: #fefae0;     
+}
+
+
+.offcanvas {
+    background-color: #606c38;
+}
+
+
+.card {
+    height: 550px;
+    width: 350px;
+}
+
+.favorite {
+    height: 400px;
+    width: 400px;
+}
+
+
+ion-icon {
+    height: 30px;
+    width: 30px;
+}
+
+#counterSpan {
+    height: 30px;
+    width: 30px;
+    background-color: #606c38;
+}
+
+#prodotti {
+    margin-top: 80px;
+    height: 100%;
+    width: 100%;
+
+}
+
